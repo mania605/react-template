@@ -1,3 +1,3 @@
 export default function Vids() {
-	return <div className='vids'>Vids</div>;
+	return <section className='vids'>Vids</section>;
 }
