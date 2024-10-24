@@ -1,0 +1,14 @@
+{% extends "layout.html" %} 
+
+{% block title %} Member List{% endblock %}
+
+{% block content %}
+  <h1>Members Page</h1>
+
+  <ul>
+    {% for member in members %}
+    <li><a href="details/{{member.id}}">{{member.username}}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+
