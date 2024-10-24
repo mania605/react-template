@@ -33,7 +33,10 @@ export default function Map() {
 	const createMap = useCallback(() => {
 		ref_mapFrame.current.innerHTML = '';
 		ref_instMap.current = new kakao.maps.Map(ref_mapFrame.current, { center: latlng });
-		ref_instMarker.current = new kakao.maps.Marker({ position: latlng, image: new kakao.maps.MarkerImage(markerImg, markerSize, markerPos) });
+		ref_instMarker.current = new kakao.maps.Marker({
+			position: latlng,
+			image: new kakao.maps.MarkerImage(markerImg, markerSize, markerPos)
+		});
 		ref_instView.current = new kakao.maps.Roadview(ref_viewFrame.current);
 		ref_instMarker.current.setMap(ref_instMap.current);
 		[ref_instType.current, ref_instZoom.current].forEach(inst => ref_instMap.current.addControl(inst));
@@ -58,7 +61,9 @@ export default function Map() {
 	}, [throttledInitPos, createMap]);
 
 	useEffect(() => {
-		Traffic ? ref_instMap.current.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC) : ref_instMap.current.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+		Traffic
+			? ref_instMap.current.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC)
+			: ref_instMap.current.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
 	}, [Traffic, kakao]);
 
 	return (
@@ -93,7 +98,6 @@ export default function Map() {
 					<li onClick={() => setTraffic(!Traffic)} className={Traffic ? 'on' : ''}>
 						{`Traffic ${Traffic ? 'OFF' : 'ON'}`}
 					</li>
-
 				</ul>
 			</nav>
 		</section>

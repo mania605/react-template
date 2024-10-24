@@ -16,7 +16,7 @@ export default function Home() {
 	//브라우저 리사이즈시 해당 메일 프레임의 자식 요소를 반복돌며 각요소의 세로위치값을 ref_posArr에 담아주는 함수
 	const getPos = () => {
 		ref_posArr.current = [];
-		for (const el of ref_el.current.childern) ref_posArr.current.push(el.offsetTop);
+		for (const el of ref_el.current.children) ref_posArr.current.push(el.offsetTop);
 		console.log(ref_posArr.current);
 	};
 

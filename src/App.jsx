@@ -7,7 +7,7 @@ import Story from './components/sub/Story';
 import Youtube from './components/sub/Youtube';
 import Contact from './components/sub/Contact';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import YoutubeDetail from './components/sub/YoutubeDetail';
+// import YoutubeDetail from './components/sub/YoutubeDetail';
 import { AnimatePresence } from 'framer-motion';
 import MobileMenu from './components/common/MobileMenu';
 import { useZustandStore } from './hooks/useZustand';
@@ -27,6 +27,7 @@ export default function App() {
 					<Route path='/story' element={<Story />} />
 					<Route path='/members' element={<Members />} />
 					<Route path='/gallery' element={<Gallery />} />
+					<Route path='/youtube' element={<Youtube />} />
 					<Route path='/contact' element={<Contact />} />
 				</Routes>
 			</AnimatePresence>
